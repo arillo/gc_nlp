@@ -2,7 +2,7 @@
 
 Elixir wrapper for Google Cloud Natural Language API. See [Cloud Natural Language API](https://cloud.google.com/natural-language/)
 
-Latest version 0.2.2 [doc.](https://hexdocs.pm/gc_nlp/0.2.2)
+Latest version 0.2.3 [doc.](https://hexdocs.pm/gc_nlp/0.2.3)
 
 ## Installation
 
@@ -12,7 +12,7 @@ The package can be installed as:
 
     ```elixir
     def deps do
-      [{:gc_nlp, "~> 0.2.2"}]
+      [{:gc_nlp, "~> 0.2.3"}]
     end
     ```
 
