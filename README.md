@@ -52,7 +52,7 @@ The package can be installed as:
 
   4. Entity Sentiment Analysis
 
-  	```elixir
-    iex> GcNLP.analyze_entity_sentiment "There is a lot of new features coming in Elixir 1.6"
-      %{ "entities" => [ %{ "mentions" => [ %{ "sentiment" => %{"magnitude" => 0, "score" => 0}, "text" => %{"beginOffset" => 11, "content" => "lot"}, "type" => "COMMON" } ], "metadata" => %{}, "name" => "lot", "salience" => 0.46147496, "sentiment" => %{"magnitude" => 0, "score" => 0}, "type" => "OTHER" }, %{ "mentions" => [%{ "sentiment" => %{"magnitude" => 0, "score" => 0}, "text" => %{"beginOffset" => 22, "content" => "features"}, "type" => "COMMON" } ], "metadata" => %{}, "name" => "features", "salience" => 0.36635956, "sentiment" => %{"magnitude" => 0, "score" => 0}, "type" => "OTHER" }, %{ "mentions" => [ %{ "sentiment" => %{"magnitude" => 0, "score" => 0}, "text" => %{"beginOffset" => 41, "content" => "Elixir 1.6"}, "type" => "PROPER" } ], "metadata" => %{}, "name" => "Elixir 1.6", "salience" => 0.17216548, "sentiment" => %{"magnitude" => 0, "score" => 0}, "type" => "OTHER" } ], "language" => "en"}
-  	```
+  ```elixir
+  iex> GcNLP.analyze_entity_sentiment "There is a lot of new features coming in Elixir 1.6"
+    %{ "entities" => [ %{ "mentions" => [ %{ "sentiment" => %{"magnitude" => 0, "score" => 0}, "text" => %{"beginOffset" => 11, "content" => "lot"}, "type" => "COMMON" } ], "metadata" => %{}, "name" => "lot", "salience" => 0.46147496, "sentiment" => %{"magnitude" => 0, "score" => 0}, "type" => "OTHER" }, %{ "mentions" => [%{ "sentiment" => %{"magnitude" => 0, "score" => 0}, "text" => %{"beginOffset" => 22, "content" => "features"}, "type" => "COMMON" } ], "metadata" => %{}, "name" => "features", "salience" => 0.36635956, "sentiment" => %{"magnitude" => 0, "score" => 0}, "type" => "OTHER" }, %{ "mentions" => [ %{ "sentiment" => %{"magnitude" => 0, "score" => 0}, "text" => %{"beginOffset" => 41, "content" => "Elixir 1.6"}, "type" => "PROPER" } ], "metadata" => %{}, "name" => "Elixir 1.6", "salience" => 0.17216548, "sentiment" => %{"magnitude" => 0, "score" => 0}, "type" => "OTHER" } ], "language" => "en"}
+  ```
