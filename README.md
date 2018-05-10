@@ -49,3 +49,10 @@ The package can be installed as:
 	iex> GcNLP.annotate_text "There is a lot of new features coming in Elixir 1.4"
     %{"documentSentiment" => %{"magnitude" => 0.1, "polarity" => 1}, "entities" => [%{"mentions" => [%{"text" => %{"beginOffset" => 41, "content" => "Elixir 1.4"}}], "metadata" => %{}, "name" => "Elixir 1.4", "salience" => 0.16144496, "type" => "OTHER"}], "language" => "en", "sentences" => [%{"text" => %{"beginOffset" => 0, "content" => "There is a lot of new features coming in Elixir 1.4"}}], "tokens" => [%{"dependencyEdge" => %{"headTokenIndex" => 1, "label" => "EXPL"}, "lemma" => "There", "partOfSpeech" => %{"tag" => "DET"}, "text" => %{"beginOffset" => 0, "content" => "There"}}, %{"dependencyEdge" => %{"headTokenIndex" => 1, "label" => "ROOT"}, "lemma" => "be", "partOfSpeech" => %{"tag" => "VERB"}, "text" => %{"beginOffset" => 6, "content" => "is"}}, ...}
 	```
+
+  4. Entity Sentiment Analysis
+
+  	```elixir
+    iex> GcNLP.analyze_entity_sentiment "There is a lot of new features coming in Elixir 1.6"
+      %{ "entities" => [ %{ "mentions" => [ %{ "sentiment" => %{"magnitude" => 0, "score" => 0}, "text" => %{"beginOffset" => 11, "content" => "lot"}, "type" => "COMMON" } ], "metadata" => %{}, "name" => "lot", "salience" => 0.46147496, "sentiment" => %{"magnitude" => 0, "score" => 0}, "type" => "OTHER" }, %{ "mentions" => [%{ "sentiment" => %{"magnitude" => 0, "score" => 0}, "text" => %{"beginOffset" => 22, "content" => "features"}, "type" => "COMMON" } ], "metadata" => %{}, "name" => "features", "salience" => 0.36635956, "sentiment" => %{"magnitude" => 0, "score" => 0}, "type" => "OTHER" }, %{ "mentions" => [ %{ "sentiment" => %{"magnitude" => 0, "score" => 0}, "text" => %{"beginOffset" => 41, "content" => "Elixir 1.6"}, "type" => "PROPER" } ], "metadata" => %{}, "name" => "Elixir 1.6", "salience" => 0.17216548, "sentiment" => %{"magnitude" => 0, "score" => 0}, "type" => "OTHER" } ], "language" => "en"}
+  	```
