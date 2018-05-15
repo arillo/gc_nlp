@@ -6,7 +6,7 @@ defmodule GcNLP do
   require Logger
   alias Goth.Token
 
-  @base_url     "https://language.googleapis.com/v1beta1/"
+  @base_url     "https://language.googleapis.com/v1/"
   @cache_ttl    Application.get_env(:gc_nlp, :cache_ttl)
   @token_ttl    Application.get_env(:gc_nlp, :token_ttl)
   @request_opts [connect_timeout: 1000000, recv_timeout: 1000000, timeout: 1000000]
@@ -35,6 +35,19 @@ defmodule GcNLP do
   """
   def analyze_entities(text) do
     make_request("documents:analyzeEntities", text)
+  end
+
+  @doc """
+  Entity Sentiment Analysis combines both entity analysis and sentiment analysis and attempts to determine the sentiment (positive or negative) expressed about entities within the text. See [doc](https://cloud.google.com/natural-language/docs/analyzing-entity-sentiment)
+
+  ## Example
+
+      iex> GcNLP.analyze_entity_sentiment "There is a lot of new features coming in Elixir 1.6"
+      %{ "entities" => [ %{ "mentions" => [ %{ "sentiment" => %{"magnitude" => 0, "score" => 0}, "text" => %{"beginOffset" => 11, "content" => "lot"}, "type" => "COMMON" } ], "metadata" => %{}, "name" => "lot", "salience" => 0.46147496, "sentiment" => %{"magnitude" => 0, "score" => 0}, "type" => "OTHER" }, %{ "mentions" => [%{ "sentiment" => %{"magnitude" => 0, "score" => 0}, "text" => %{"beginOffset" => 22, "content" => "features"}, "type" => "COMMON" } ], "metadata" => %{}, "name" => "features", "salience" => 0.36635956, "sentiment" => %{"magnitude" => 0, "score" => 0}, "type" => "OTHER" }, %{ "mentions" => [ %{ "sentiment" => %{"magnitude" => 0, "score" => 0}, "text" => %{"beginOffset" => 41, "content" => "Elixir 1.6"}, "type" => "PROPER" } ], "metadata" => %{}, "name" => "Elixir 1.6", "salience" => 0.17216548, "sentiment" => %{"magnitude" => 0, "score" => 0}, "type" => "OTHER" } ], "language" => "en"}
+
+  """
+  def analyze_entity_sentiment(text) do
+    make_request("documents:analyzeEntitySentiment", text)
   end
 
   @doc """
